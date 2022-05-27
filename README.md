@@ -14,7 +14,5 @@
 
 Use the commands below:
 
-* go build unicron.go
-* ./unicron
-
-
+* `go build unicron.go`
+* `./unicron`
