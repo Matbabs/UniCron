@@ -1,0 +1,38 @@
+
+.cronjob {
+    margin: var(--margin);
+    padding: var(--padding);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cronjob > span {
+    min-width: 200px;
+}
+
+.cronjob > span.time {
+    color: var(--third);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.cronjob > .controle {
+    margin-right: var(--margin);
+    display: flex;
+    align-items: center;
+}
+
+.cronjob > .controle span {
+    margin-right: var(--margin);
+    padding: 5px;
+}
+
+.cronjob > .controle span.clear {
+    background: var(--secondary);
+}
+
+.cronjob > .controle span.edit {
+    background: var(--primary);
+}

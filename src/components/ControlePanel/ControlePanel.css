@@ -1,0 +1,40 @@
+
+.control-panel {
+    margin: var(--margin);
+    padding: var(--padding);
+    overflow: hidden;
+}
+
+.control-panel .form {
+    display: flex;
+}
+
+.control-panel .form input{
+    margin-right: var(--margin);
+    margin-top: var(--margin);
+    padding: calc(var(--padding) / 2);
+    font-size: 0.9em;
+}
+
+.control-panel .form input.cron {
+    width: 50px;
+}
+
+.control-panel .form input.job {
+    width: 100%;
+}
+
+.control-panel .form button{
+    margin-right: var(--margin);
+    margin-top: var(--margin);
+    padding: calc(var(--padding) / 2);
+    font-size: 0.9em;
+}
+
+.control-panel .form button.clear {
+    background: var(--secondary);
+}
+
+.control-panel .form button.add {
+    background: var(--primary);
+}

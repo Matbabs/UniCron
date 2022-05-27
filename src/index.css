@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --background: #2e2c2c;
+    --primary: #55E6C1;
+    --secondary: #FC427B;
+    --third: #fff2a6;
+    --text: #ffffff;
+    --margin: 15px;
+    --padding: 15px;
+    --radius: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, ::before, ::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.7em;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text);
+}
+
+.neumorphism {
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, #292828, #312f2f);
+    box-shadow:  5px 5px 11px #272525,
+                 -5px -5px 11px #353333;
 }
