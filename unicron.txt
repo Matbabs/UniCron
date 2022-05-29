@@ -1,3 +1,2 @@
-
 * * * * * echo test
-* * * * * echo 2
+*/1 */1 * * * echo test  >> test.txt

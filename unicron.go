@@ -85,6 +85,7 @@ func crontabHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	//TODO get all crontab, clear file & rewrite
 	exec.Command("npm", "run", "start").Start()
 	http.HandleFunc("/crontab", crontabHandler)
 	http.ListenAndServe(":8080", nil)

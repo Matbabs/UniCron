@@ -46,7 +46,6 @@ export function getCronjobsThunk() {
 
 export function putCronjobsThunk(cronjobs: any[]) {
     return (dispatch: any) => {
-        console.log("inside");
         fetch(`${URL}/crontab`, {
             method: 'PUT',
             headers: {},
@@ -57,7 +56,6 @@ export function putCronjobsThunk(cronjobs: any[]) {
 
 export function postCronjobsThunk(cronjob: any) {
     return (dispatch: any) => {
-        console.log("inside");
         fetch(`${URL}/crontab`, {
             method: 'POST',
             headers: {},

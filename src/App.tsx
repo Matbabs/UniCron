@@ -3,32 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import ControlePanel from './components/ControlePanel/ControlePanel';
 import CronJob from './components/CronJob/CronJob';
-import { cronjobsSelector, getCronjobsThunk, postCronjobsThunk, putCronjobsThunk} from './slices/cronjobs';
+import { cronjobsSelector, getCronjobsThunk} from './slices/cronjobs';
 
 function App() {
 
     const dispatch = useDispatch();
-    const { cronjobs, loading, hasErrors } = useSelector(cronjobsSelector)	
+    const { cronjobs, loading } = useSelector(cronjobsSelector)	
 
     useEffect(() => {
         dispatch<any>(getCronjobsThunk())
     }, [dispatch])
 
-    function putCronjob() {
-        dispatch<any>(putCronjobsThunk([
-            {
-                Cron: "* * * * *",
-                Job: "echo test"
-            },
-            {
-                Cron: "* * * * *",
-                Job: "echo 2"
-            }
-        ]))
-    }
-
     return (
-        <div className='container' onClick={putCronjob}>
+        <div className='container'>
             <div className='header'>
                 <div className='title'>
                     <span className="iconify" data-icon="mdi:unicorn" style={{color: '#fc427b'}} data-width="70" data-height="70"></span>
