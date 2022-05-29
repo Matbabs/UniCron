@@ -52,6 +52,18 @@ func shellClearCrontab() {
 	shellSaveCrontab()
 }
 
+func shellWriteAllCronjobs(cronjobs []CronJob) {
+	shellClearCrontab()
+	for _, cronjob := range cronjobs {
+		shellAddCronJob(cronjob)
+	}
+}
+
+func initContext() {
+	cronjobs := shellGetCrontab()
+	shellWriteAllCronjobs(cronjobs)
+}
+
 func crontabHandler(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	w.Header().Set("Content-Type", "application/json")
@@ -64,10 +76,7 @@ func crontabHandler(w http.ResponseWriter, r *http.Request) {
 		if r.Body != nil {
 			var cronjobs []CronJob
 			decoder.Decode(&cronjobs)
-			shellClearCrontab()
-			for _, cronjob := range cronjobs {
-				shellAddCronJob(cronjob)
-			}
+			shellWriteAllCronjobs(cronjobs)
 			json.NewEncoder(w).Encode(cronjobs)
 		} else {
 			http.Error(w, "body cannot be empty", http.StatusInternalServerError)
@@ -85,7 +94,7 @@ func crontabHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	//TODO get all crontab, clear file & rewrite
+	initContext()
 	exec.Command("npm", "run", "start").Start()
 	http.HandleFunc("/crontab", crontabHandler)
 	http.ListenAndServe(":8080", nil)

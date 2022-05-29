@@ -41,12 +41,12 @@ export default function ControlePanel() {
             {
                 !reload && (
                     <div className='form'>
-                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setMinutes)}/>
-                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setHours)}/>
-                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setDayMonth)}/>
-                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setMonth)}/> 
-                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setDayWeek)}/>
-                        <input type="text" className='job glass' placeholder="echo 'Hello World !'" onChange={(e: any) => inputsHandler(e, setJob)}/>
+                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setMinutes)} value={minutes}/>
+                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setHours)} value={hours}/>
+                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setDayMonth)} value={dayMonth}/>
+                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setMonth)} value={month}/> 
+                        <input type="text" className='cron glass' placeholder="*" onChange={(e: any) => inputsHandler(e, setDayWeek)} value={dayWeek}/>
+                        <input type="text" className='job glass' placeholder="echo 'Hello World !'" onChange={(e: any) => inputsHandler(e, setJob)} value={job}/>
                         <button className='clear glass' onClick={clearHandler}>Clear</button>
                         <button className='add glass' onClick={addHandler} disabled={!requestIsValid()}>Add</button>
                     </div>
