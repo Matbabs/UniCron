@@ -5,6 +5,8 @@
 ![](https://img.shields.io/static/v1.svg?label=&message=UI&color=fff2a6)
 ![](https://img.shields.io/static/v1.svg?label=&message=Manager&color=2e2c2c)
 
+![](./public/screen.png)
+
 ## Depencies
 
 * Golang

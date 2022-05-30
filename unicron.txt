@@ -1,2 +1,5 @@
 
-* * * * * echo test
+* * * * * echo unicron >> ~/log.txt
+* * * * * echo Hello World !
+15 15 * * * firefox www.google.com
+* */1 * * * cd ../my-repo && git pull
